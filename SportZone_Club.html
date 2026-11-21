@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SportZone Club</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #101820;
+      color: white;
+    }
+
+    header {
+      background: #07111c;
+      padding: 20px 12px;
+      text-align: center;
+      border-bottom: 2px solid #00e5ff;
+    }
+
+    header h2 {
+      color: #00e5ff;
+      margin-bottom: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 8px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 18px;
+      background: linear-gradient(135deg, #102c40, #075565);
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .hero span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #00e5ff;
+      color: #07111c;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 40px 18px;
+    }
+
+    section h2 {
+      color: #00e5ff;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #1c2b38;
+      border: 1px solid #344b5b;
+      border-radius: 10px;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .emoji {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #d5e0e8;
+    }
+
+    .events {
+      background: #0b141e;
+    }
+
+    .event {
+      background: #1c2b38;
+      padding: 18px;
+      margin: 12px 0;
+      border-radius: 8px;
+    }
+
+    .event p {
+      margin: 10px 0;
+      color: #d5e0e8;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 14px;
+      border-radius: 6px;
+      border: 1px solid #526574;
+      background: #1c2b38;
+      color: white;
+      font-size: 16px;
+    }
+
+    #result {
+      color: #00e5ff;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #07111c;
+      text-align: center;
+      padding: 22px 10px;
+      color: #d5e0e8;
+    }
+
+    @media (max-width: 350px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>🏆 SPORTZONE</h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#sports">Sports</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>WELCOME TO <span>SPORTZONE</span></h1>
+      <p>Play Together. Train Hard. Win Together.</p>
+      <a class="btn" href="#sports">Explore Sports</a>
+    </section>
+
+    <section id="sports">
+      <h2>OUR SPORTS</h2>
+
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">🏏</div>
+          <h3>Cricket</h3>
+          <p>Improve your skills and teamwork.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">⚽</div>
+          <h3>Football</h3>
+          <p>Build speed and team spirit.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🏸</div>
+          <h3>Badminton</h3>
+          <p>Develop focus and accuracy.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🏀</div>
+          <h3>Basketball</h3>
+          <p>Practice passing and shooting.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🏐</div>
+          <h3>Volleyball</h3>
+          <p>Enjoy the game with your team.</p>
+        </div>
+
+        <div class="card">
+          <div class="emoji">🏃</div>
+          <h3>Athletics</h3>
+          <p>Challenge yourself and improve.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="events" id="events">
+      <h2>UPCOMING EVENTS</h2>
+
+      <div class="event">
+        <h3>🏏 Cricket Tournament</h3>
+        <p>15 November 2026</p>
+        <button class="btn" onclick="chooseEvent('Cricket Tournament')">
+          Register
+        </button>
+      </div>
+
+      <div class="event">
+        <h3>⚽ Football Championship</h3>
+        <p>22 November 2026</p>
+        <button class="btn" onclick="chooseEvent('Football Championship')">
+          Register
+        </button>
+      </div>
+
+      <div class="event">
+        <h3>🏸 Badminton Competition</h3>
+        <p>29 November 2026</p>
+        <button class="btn" onclick="chooseEvent('Badminton Competition')">
+          Register
+        </button>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>CONTACT / REGISTER</h2>
+
+      <form id="contactForm">
+        <input id="name" type="text"
+          placeholder="Enter your name" required>
+
+        <input id="email" type="email"
+          placeholder="Enter your email" required>
+
+        <select id="sport" required>
+          <option value="">Select a sport</option>
+          <option>Cricket</option>
+          <option>Football</option>
+          <option>Badminton</option>
+          <option>Basketball</option>
+          <option>Volleyball</option>
+          <option>Athletics</option>
+        </select>
+
+        <textarea id="message" rows="4"
+          placeholder="Your message" required></textarea>
+
+        <button class="btn" type="submit">Submit Form</button>
+        <p id="result" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 SportZone Sports Club</p>
+    <p>Play • Practice • Perform</p>
+  </footer>
+
+  <script>
+    function chooseEvent(eventName) {
+      document.getElementById("message").value =
+        "I want to register for " + eventName + ".";
+
+      document.getElementById("contact").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    document.getElementById("contactForm").addEventListener(
+      "submit",
+      function(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var sport = document.getElementById("sport").value;
+
+        document.getElementById("result").textContent =
+          "Thank you, " + name +
+          "! Your demo form works. Selected sport: " + sport + ".";
+
+        this.reset();
+      }
+    );
+  </script>
+
+</body>
+</html>
